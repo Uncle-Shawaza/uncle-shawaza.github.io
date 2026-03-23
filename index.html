@@ -4,16 +4,16 @@
     <!-- Meta Tags for SEO and Social Sharing -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Uncle Shawaza - Software Engineer specializing in full-stack development, scalable architectures, and clean code. View portfolio, projects, and contributions.">
-    <meta name="keywords" content="software engineer, web developer, full-stack, GitHub, portfolio, uncle-shawaza, developer, programming, open source, backend, frontend">
+    <meta name="description" content="Uncle Shawaza - Software Engineer specializing in full-stack development, scalable architectures, and clean code. Explore projects, contributions, and technical expertise.">
+    <meta name="keywords" content="software engineer, web developer, full-stack, GitHub, portfolio, uncle-shawaza, developer, programming, open source">
     <meta name="author" content="Uncle Shawaza">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://uncle-shawaza.github.io/">
-    <meta property="og:title" content="Uncle Shawaza | Software Engineer Portfolio">
-    <meta property="og:description" content="Professional portfolio of Uncle Shawaza - Software Engineer specializing in full-stack development, scalable architectures, and clean code solutions.">
+    <meta property="og:title" content="Uncle Shawaza | Software Engineer">
+    <meta property="og:description" content="Professional portfolio of Uncle Shawaza - Software Engineer specializing in full-stack development.">
     <meta property="og:image" content="https://uncle-shawaza.github.io/icon.png">
     
     <!-- Twitter -->
@@ -27,13 +27,13 @@
     <link rel="apple-touch-icon" href="icon.png">
     <link rel="canonical" href="https://uncle-shawaza.github.io/">
     
-    <title>Uncle Shawaza | Software Engineer Portfolio</title>
+    <title>Uncle Shawaza | Software Engineer</title>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Multiple Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -44,9 +44,9 @@
         
         body {
             min-height: 100vh;
-            background: linear-gradient(145deg, #0a0c10 0%, #0f1117 100%);
-            font-family: 'Inter', sans-serif;
-            color: #e5e7eb;
+            background: linear-gradient(145deg, #0a0f1a 0%, #0c1220 50%, #0a0f1a 100%);
+            font-family: 'Inter', 'Poppins', sans-serif;
+            color: #e8edf5;
             position: relative;
             overflow-x: hidden;
         }
@@ -59,8 +59,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle at 25% 50%, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(100, 150, 220, 0.03) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(120, 170, 240, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px, 80px 80px;
             pointer-events: none;
             z-index: 0;
         }
@@ -70,7 +72,7 @@
             position: fixed;
             font-family: 'Fira Code', monospace;
             font-size: 10px;
-            color: rgba(59, 130, 246, 0.05);
+            color: rgba(100, 150, 220, 0.08);
             white-space: nowrap;
             pointer-events: none;
             z-index: 0;
@@ -82,8 +84,8 @@
                 transform: translateY(100vh) translateX(0);
                 opacity: 0;
             }
-            10% { opacity: 0.15; }
-            90% { opacity: 0.15; }
+            15% { opacity: 0.25; }
+            85% { opacity: 0.25; }
             to {
                 transform: translateY(-20vh) translateX(80px);
                 opacity: 0;
@@ -95,21 +97,30 @@
             position: relative;
             z-index: 2;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem 1.5rem;
+            padding: 2rem;
         }
         
         .content {
-            max-width: 1300px;
-            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         /* Profile Section */
         .profile-section {
             text-align: center;
             margin-bottom: 2.5rem;
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .profile-img {
@@ -117,21 +128,23 @@
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 0.75rem;
-            transition: transform 0.4s ease;
+            margin-bottom: 1rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
         }
         
         .profile-img:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
+            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.25);
         }
         
         .name {
-            font-family: 'Fira Code', monospace;
-            font-size: 1.8rem;
+            font-family: 'Space Grotesk', 'Fira Code', monospace;
+            font-size: 2rem;
             font-weight: 500;
             letter-spacing: -0.02em;
-            margin-bottom: 0.2rem;
-            background: linear-gradient(135deg, #ffffff, #94a3b8);
+            margin-bottom: 0.3rem;
+            background: linear-gradient(135deg, #f0f4fa, #b9c8f0);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -139,7 +152,7 @@
         
         .name::before {
             content: '>';
-            color: #3b82f6;
+            color: #5d9bff;
             font-weight: 400;
             margin-right: 0.25rem;
         }
@@ -148,9 +161,9 @@
             content: '';
             display: inline-block;
             width: 2px;
-            height: 1em;
-            background: #3b82f6;
-            margin-left: 0.2rem;
+            height: 1.1em;
+            background: #5d9bff;
+            margin-left: 0.25rem;
             animation: blink 1s step-end infinite;
             vertical-align: middle;
         }
@@ -161,143 +174,71 @@
         }
         
         .title {
-            font-size: 0.8rem;
-            color: #6b7280;
-            letter-spacing: 0.3px;
-        }
-        
-        /* Two Column Layout */
-        .two-columns {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Personal Info Card */
-        .personal-card {
-            background: rgba(15, 17, 23, 0.3);
-            padding: 1.25rem;
-            height: fit-content;
-        }
-        
-        .personal-header {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.6rem;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-        }
-        
-        .personal-header i {
-            font-size: 1rem;
-            color: #3b82f6;
-        }
-        
-        .personal-header h3 {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            font-weight: 400;
-            color: #9ca3af;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            color: #8b9cc7;
             letter-spacing: 0.5px;
-        }
-        
-        .info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .info-icon {
-            width: 28px;
-            color: #3b82f6;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-        
-        .info-content {
-            flex: 1;
-        }
-        
-        .info-label {
-            font-size: 0.6rem;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .info-value {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: #e5e7eb;
             font-weight: 400;
         }
         
-        .divider {
-            height: 1px;
-            background: rgba(59, 130, 246, 0.15);
-            margin: 1rem 0;
-        }
-        
-        .bio-text {
-            font-size: 0.75rem;
-            line-height: 1.5;
-            color: #9ca3af;
-            margin-top: 0.75rem;
-        }
-        
-        /* Skills Tags */
-        .skills-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.75rem;
-        }
-        
-        .skill-tag {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.6rem;
-            color: #60a5fa;
-            background: rgba(59, 130, 246, 0.08);
-            padding: 0.2rem 0.6rem;
-            letter-spacing: 0.3px;
-        }
-        
-        /* Stats Primary */
+        /* Stats Grid - Responsive with different column counts per screen */
         .stats-primary {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        /* Desktop: 6 columns */
+        @media (min-width: 1200px) {
+            .stats-primary {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+        
+        /* Laptop: 4 columns */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .stats-primary {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* Tablet: 3 columns */
+        @media (min-width: 600px) and (max-width: 767px) {
+            .stats-primary {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Mobile: 2 columns */
+        @media (max-width: 599px) {
+            .stats-primary {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         .stat-item {
             text-align: center;
-            padding: 0.75rem 0.25rem;
-            background: rgba(15, 17, 23, 0.3);
+            padding: 0.9rem 0.5rem;
+            background: rgba(20, 28, 40, 0.45);
+            backdrop-filter: blur(5px);
             transition: all 0.3s ease;
+            border-radius: 12px;
         }
         
         .stat-item:hover {
-            background: rgba(15, 17, 23, 0.5);
+            background: rgba(30, 40, 55, 0.6);
+            transform: translateY(-2px);
         }
         
         .stat-icon {
-            font-size: 1.1rem;
-            color: #3b82f6;
-            margin-bottom: 0.35rem;
-            opacity: 0.8;
+            font-size: 1.2rem;
+            color: #6d9eff;
+            margin-bottom: 0.4rem;
+            opacity: 0.9;
         }
         
         .stat-number {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
             font-size: 1.3rem;
             font-weight: 500;
             color: #ffffff;
@@ -306,62 +247,238 @@
         }
         
         .stat-label {
-            font-size: 0.55rem;
-            color: #6b7280;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.6rem;
+            color: #8e9fc3;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
+            font-weight: 500;
         }
         
-        /* Geometric Section */
-        .geometric-section {
-            margin: 1.5rem 0;
+        /* Personal Info Section - Responsive Grid */
+        .personal-section {
+            margin-bottom: 2.5rem;
         }
         
         .section-title {
             font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            color: #3b82f6;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: #6d9eff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1.5px;
             font-weight: 400;
+            position: relative;
+        }
+        
+        .section-title::before,
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background: rgba(109, 158, 255, 0.3);
+        }
+        
+        .section-title::before {
+            left: calc(50% - 80px);
+        }
+        
+        .section-title::after {
+            right: calc(50% - 80px);
+        }
+        
+        @media (max-width: 640px) {
+            .section-title::before,
+            .section-title::after {
+                width: 15px;
+            }
+            .section-title::before {
+                left: calc(50% - 50px);
+            }
+            .section-title::after {
+                right: calc(50% - 50px);
+            }
+        }
+        
+        .personal-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        /* Desktop: 4 columns */
+        @media (min-width: 1024px) {
+            .personal-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* Laptop: 2 columns */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .personal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Tablet and Mobile: 1 column */
+        @media (max-width: 767px) {
+            .personal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .personal-card {
+            background: rgba(20, 28, 40, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            border-radius: 16px;
+            border: 1px solid rgba(109, 158, 255, 0.08);
+        }
+        
+        .personal-card:hover {
+            background: rgba(30, 40, 55, 0.5);
+            border-color: rgba(109, 158, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .personal-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(109, 158, 255, 0.2);
+        }
+        
+        .personal-header i {
+            font-size: 1rem;
+            color: #6d9eff;
+        }
+        
+        .personal-header h3 {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #b0c4f0;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(109, 158, 255, 0.06);
+        }
+        
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.7rem;
+            color: #8e9fc3;
+            letter-spacing: 0.3px;
+        }
+        
+        .info-value {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.7rem;
+            color: #e8edf5;
+            font-weight: 500;
+        }
+        
+        .bio-text {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            color: #b8c5e0;
+            margin-top: 0.3rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .skill-tag {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.6rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(109, 158, 255, 0.12);
+            color: #8bb0ff;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            transition: all 0.2s ease;
+        }
+        
+        .skill-tag:hover {
+            background: rgba(109, 158, 255, 0.25);
+            transform: scale(1.02);
+        }
+        
+        /* Geometric Section - Responsive Grid */
+        .geometric-section {
+            margin: 2.5rem 0;
         }
         
         .geometric-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 1.2rem;
         }
         
-        /* Geometric Cards */
+        /* Desktop: 2 columns */
+        @media (min-width: 1024px) {
+            .geometric-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Tablet and Mobile: 1 column */
+        @media (max-width: 1023px) {
+            .geometric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .geo-card {
-            background: rgba(15, 17, 23, 0.25);
-            padding: 1rem;
+            background: rgba(20, 28, 40, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 1.2rem;
             transition: all 0.3s ease;
+            border-radius: 16px;
+            border: 1px solid rgba(109, 158, 255, 0.08);
         }
         
         .geo-card:hover {
-            background: rgba(15, 17, 23, 0.4);
+            background: rgba(30, 40, 55, 0.5);
+            border-color: rgba(109, 158, 255, 0.2);
         }
         
         .geo-header {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.9rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 1px solid rgba(109, 158, 255, 0.2);
         }
         
         .geo-header i {
-            font-size: 0.85rem;
-            color: #3b82f6;
+            font-size: 1rem;
+            color: #6d9eff;
         }
         
         .geo-header h3 {
             font-family: 'Fira Code', monospace;
-            font-size: 0.65rem;
+            font-size: 0.75rem;
             font-weight: 400;
-            color: #9ca3af;
+            color: #b0c4f0;
             letter-spacing: 0.5px;
         }
         
@@ -371,7 +488,7 @@
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: 0.8rem;
         }
         
         .circular-item {
@@ -380,19 +497,26 @@
         }
         
         .circular-chart {
-            width: 55px;
-            height: 55px;
-            margin: 0 auto 0.35rem;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 0.4rem;
+        }
+        
+        @media (max-width: 480px) {
+            .circular-chart {
+                width: 55px;
+                height: 55px;
+            }
         }
         
         .circle-bg {
-            stroke: rgba(59, 130, 246, 0.12);
+            stroke: rgba(109, 158, 255, 0.15);
             stroke-width: 2.5;
             fill: none;
         }
         
         .circle-progress {
-            stroke: #3b82f6;
+            stroke: #6d9eff;
             stroke-width: 2.5;
             fill: none;
             stroke-linecap: round;
@@ -401,112 +525,106 @@
         
         .circular-value {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 500;
+            font-size: 0.9rem;
+            font-weight: 600;
             color: #ffffff;
         }
         
         .circular-label {
-            font-size: 0.5rem;
-            color: #6b7280;
-            margin-top: 0.15rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.55rem;
+            color: #8e9fc3;
+            margin-top: 0.2rem;
         }
         
         /* Bar Chart */
         .bar-chart, .lang-list {
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            gap: 0.7rem;
         }
         
         .bar-item, .lang-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
         
         .bar-label, .lang-name {
-            width: 55px;
+            width: 70px;
             font-family: 'Fira Code', monospace;
-            font-size: 0.6rem;
-            color: #9ca3af;
+            font-size: 0.65rem;
+            color: #b0c4f0;
         }
         
         .bar-container, .lang-bar {
             flex: 1;
-            height: 2.5px;
-            background: rgba(59, 130, 246, 0.12);
+            height: 3px;
+            background: rgba(109, 158, 255, 0.12);
+            border-radius: 3px;
+            overflow: hidden;
         }
         
         .bar-fill, .lang-fill {
             height: 100%;
-            background: #3b82f6;
+            background: linear-gradient(90deg, #6d9eff, #8bb0ff);
             width: 0%;
-            transition: width 1s ease;
+            transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border-radius: 3px;
         }
         
         .bar-percent, .lang-percent {
-            width: 32px;
+            width: 35px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.6rem;
-            color: #3b82f6;
+            font-size: 0.65rem;
+            color: #6d9eff;
             text-align: right;
         }
         
         /* Metrics Grid */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.6rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.7rem;
+        }
+        
+        @media (max-width: 480px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         .metric {
             text-align: center;
-            padding: 0.4rem;
+            padding: 0.5rem;
+            background: rgba(109, 158, 255, 0.05);
+            border-radius: 10px;
         }
         
         .metric-value {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 1rem;
+            font-weight: 600;
             color: #ffffff;
         }
         
         .metric-label {
-            font-size: 0.5rem;
-            color: #6b7280;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.55rem;
+            color: #8e9fc3;
             margin-top: 0.15rem;
             text-transform: uppercase;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
         }
-        
-        /* Heatmap Mini */
-        .heatmap {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 3px;
-            margin-top: 0.6rem;
-        }
-        
-        .heatmap-cell {
-            aspect-ratio: 1;
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 2px;
-        }
-        
-        .heatmap-cell.level-1 { background: rgba(59, 130, 246, 0.2); }
-        .heatmap-cell.level-2 { background: rgba(59, 130, 246, 0.35); }
-        .heatmap-cell.level-3 { background: rgba(59, 130, 246, 0.55); }
-        .heatmap-cell.level-4 { background: #3b82f6; }
         
         /* Timeline Stats */
         .timeline-stats {
             display: flex;
             justify-content: space-between;
-            gap: 0.75rem;
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(59, 130, 246, 0.15);
+            gap: 0.8rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(109, 158, 255, 0.12);
         }
         
         .timeline-item {
@@ -516,45 +634,142 @@
         
         .timeline-value {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 500;
-            color: #3b82f6;
+            color: #6d9eff;
         }
         
         .timeline-label {
-            font-size: 0.5rem;
-            color: #6b7280;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.55rem;
+            color: #8e9fc3;
+        }
+        
+        /* Heatmap */
+        .heatmap {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 3px;
+            margin-top: 0.8rem;
+        }
+        
+        .heatmap-cell {
+            aspect-ratio: 1;
+            background: rgba(109, 158, 255, 0.1);
+            border-radius: 3px;
+            transition: all 0.2s ease;
+        }
+        
+        .heatmap-cell.level-1 { background: rgba(109, 158, 255, 0.25); }
+        .heatmap-cell.level-2 { background: rgba(109, 158, 255, 0.45); }
+        .heatmap-cell.level-3 { background: rgba(109, 158, 255, 0.65); }
+        .heatmap-cell.level-4 { background: #6d9eff; }
+        
+        /* Repository Stats */
+        .repo-stats {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.6rem;
+            margin-top: 0.8rem;
+            flex-wrap: wrap;
+        }
+        
+        .repo-stat-badge {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(109, 158, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .repo-stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .repo-stat-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.55rem;
+            color: #8e9fc3;
+        }
+        
+        /* Extra Stats Section */
+        .extra-stats {
+            display: grid;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .extra-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .extra-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .extra-card {
+            background: rgba(20, 28, 40, 0.4);
+            backdrop-filter: blur(5px);
+            padding: 1rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(109, 158, 255, 0.08);
+        }
+        
+        .extra-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #6d9eff;
+        }
+        
+        .extra-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.65rem;
+            color: #8e9fc3;
+            margin-top: 0.3rem;
         }
         
         /* Enter Button */
         .enter-wrapper {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
         
         .enter-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background: none;
-            border: none;
-            padding: 0.5rem 1.5rem;
+            gap: 0.6rem;
+            background: rgba(109, 158, 255, 0.08);
+            border: 1px solid rgba(109, 158, 255, 0.25);
+            padding: 0.7rem 2rem;
             font-family: 'Fira Code', monospace;
-            font-size: 0.75rem;
-            color: #9ca3af;
+            font-size: 0.8rem;
+            color: #b0c4f0;
             cursor: pointer;
             transition: all 0.3s ease;
             letter-spacing: 0.5px;
+            border-radius: 40px;
+            backdrop-filter: blur(5px);
         }
         
         .enter-btn i {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             transition: transform 0.3s ease;
         }
         
         .enter-btn:hover {
-            color: #3b82f6;
-            gap: 0.7rem;
+            background: rgba(109, 158, 255, 0.18);
+            border-color: rgba(109, 158, 255, 0.45);
+            color: #ffffff;
+            gap: 0.9rem;
         }
         
         .enter-btn:hover i {
@@ -563,79 +778,43 @@
         
         .loading {
             display: none;
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
             font-family: 'Fira Code', monospace;
-            font-size: 0.6rem;
-            color: #3b82f6;
+            font-size: 0.65rem;
+            color: #6d9eff;
             text-align: center;
         }
         
-        /* Responsive */
-        @media (max-width: 1000px) {
-            .geometric-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 800px) {
-            .two-columns {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .personal-card {
-                order: -1;
-            }
-            
-            .stats-primary {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .container {
-                padding: 1.5rem 1rem;
-            }
-            
-            .profile-img {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .name {
-                font-size: 1.4rem;
-            }
-            
-            .stats-primary {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
-            }
-            
-            .geometric-grid {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
-            
-            .circular-wrapper {
-                flex-direction: row;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .stats-primary {
-                grid-template-columns: 1fr;
-            }
-        }
-        
+        /* Scrollbar */
         ::-webkit-scrollbar {
-            width: 3px;
+            width: 4px;
         }
+        
         ::-webkit-scrollbar-track {
-            background: transparent;
+            background: rgba(20, 28, 40, 0.5);
         }
+        
         ::-webkit-scrollbar-thumb {
-            background: #3b82f6;
-            border-radius: 2px;
+            background: #6d9eff;
+            border-radius: 4px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .stat-item, .personal-card, .geo-card, .extra-card {
+            animation: fadeInScale 0.5s ease forwards;
+            animation-delay: calc(var(--order, 0) * 0.03s);
+            opacity: 0;
         }
     </style>
 </head>
@@ -646,375 +825,26 @@
             <div class="profile-section">
                 <img src="icon.png" alt="Uncle Shawaza" class="profile-img" onerror="this.src='https://github.com/uncle-shawaza.png'">
                 <h1 class="name">uncle-shawaza</h1>
-                <p class="title">Software Engineer | Full-Stack Developer | Open Source Contributor</p>
+                <p class="title">Software Engineer | Full-Stack Developer | Open Source Advocate</p>
             </div>
             
-            <!-- Two Column Layout: Personal Info + Stats -->
-            <div class="two-columns">
-                <!-- Personal Information Card -->
-                <div class="personal-card">
-                    <div class="personal-header">
-                        <i class="fas fa-user-astronaut"></i>
-                        <h3>// personal profile</h3>
-                    </div>
-                    <div class="info-list">
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-user"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">full name</div>
-                                <div class="info-value" id="full-name">Uncle Shawaza</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">age</div>
-                                <div class="info-value" id="age">-- years</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">location</div>
-                                <div class="info-value" id="location">--</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-globe"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">languages</div>
-                                <div class="info-value" id="languages">English, Arabic</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-briefcase"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">experience</div>
-                                <div class="info-value" id="experience">-- years</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">education</div>
-                                <div class="info-value" id="education">Computer Science</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">email</div>
-                                <div class="info-value" id="email">uncle.shawaza@example.com</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon"><i class="fab fa-github"></i></div>
-                            <div class="info-content">
-                                <div class="info-label">github join</div>
-                                <div class="info-value" id="join-date">--</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="bio-text" id="bio-text">
-                        Full-stack developer passionate about building scalable applications, clean architecture, and open source contributions.
-                    </div>
-                    <div class="skills-tags" id="skills-tags">
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Go</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">K8s</span>
-                        <span class="skill-tag">AWS</span>
-                    </div>
-                </div>
-                
-                <!-- Right Side: Stats -->
-                <div>
-                    <!-- Primary Stats -->
-                    <div class="stats-primary" id="primary-stats">
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-code"></i></div>
-                            <div class="stat-number" id="repo-count">--</div>
-                            <div class="stat-label">repos</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-star"></i></div>
-                            <div class="stat-number" id="star-count">--</div>
-                            <div class="stat-label">stars</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
-                            <div class="stat-number" id="fork-count">--</div>
-                            <div class="stat-label">forks</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-users"></i></div>
-                            <div class="stat-number" id="follower-count">--</div>
-                            <div class="stat-label">followers</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-user-plus"></i></div>
-                            <div class="stat-number" id="following-count">--</div>
-                            <div class="stat-label">following</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="stat-number" id="commit-count">--</div>
-                            <div class="stat-label">commits</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
-                            <div class="stat-number" id="account-age">--</div>
-                            <div class="stat-label">account age</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
-                            <div class="stat-number" id="gist-count">--</div>
-                            <div class="stat-label">gists</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Geometric Statistics Section -->
-                    <div class="geometric-section">
-                        <div class="section-title">// analytics dashboard</div>
-                        <div class="geometric-grid">
-                            <!-- Code Activity -->
-                            <div class="geo-card">
-                                <div class="geo-header">
-                                    <i class="fas fa-chart-pie"></i>
-                                    <h3>code activity</h3>
-                                </div>
-                                <div class="circular-wrapper" id="circular-stats">
-                                    <div class="circular-item">
-                                        <svg viewBox="0 0 40 40" class="circular-chart">
-                                            <circle cx="20" cy="20" r="16" class="circle-bg"></circle>
-                                            <circle cx="20" cy="20" r="16" class="circle-progress" id="circle-commits" transform="rotate(-90 20 20)"></circle>
-                                        </svg>
-                                        <div class="circular-value" id="commit-percent">--</div>
-                                        <div class="circular-label">commits</div>
-                                    </div>
-                                    <div class="circular-item">
-                                        <svg viewBox="0 0 40 40" class="circular-chart">
-                                            <circle cx="20" cy="20" r="16" class="circle-bg"></circle>
-                                            <circle cx="20" cy="20" r="16" class="circle-progress" id="circle-prs" transform="rotate(-90 20 20)"></circle>
-                                        </svg>
-                                        <div class="circular-value" id="pr-percent">--</div>
-                                        <div class="circular-label">pull reqs</div>
-                                    </div>
-                                    <div class="circular-item">
-                                        <svg viewBox="0 0 40 40" class="circular-chart">
-                                            <circle cx="20" cy="20" r="16" class="circle-bg"></circle>
-                                            <circle cx="20" cy="20" r="16" class="circle-progress" id="circle-issues" transform="rotate(-90 20 20)"></circle>
-                                        </svg>
-                                        <div class="circular-value" id="issue-percent-circ">--</div>
-                                        <div class="circular-label">issues</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-stats">
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="first-contrib">--</div>
-                                        <div class="timeline-label">first activity</div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="last-active">--</div>
-                                        <div class="timeline-label">last active</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Repository Analytics -->
-                            <div class="geo-card">
-                                <div class="geo-header">
-                                    <i class="fas fa-chart-simple"></i>
-                                    <h3>repository analytics</h3>
-                                </div>
-                                <div class="bar-chart" id="repo-metrics">
-                                    <div class="bar-item">
-                                        <span class="bar-label">forks</span>
-                                        <div class="bar-container"><div class="bar-fill" id="fork-bar"></div></div>
-                                        <span class="bar-percent" id="fork-percent">--</span>
-                                    </div>
-                                    <div class="bar-item">
-                                        <span class="bar-label">watchers</span>
-                                        <div class="bar-container"><div class="bar-fill" id="watch-bar"></div></div>
-                                        <span class="bar-percent" id="watch-percent">--</span>
-                                    </div>
-                                    <div class="bar-item">
-                                        <span class="bar-label">open issues</span>
-                                        <div class="bar-container"><div class="bar-fill" id="issue-bar"></div></div>
-                                        <span class="bar-percent" id="issue-percent">--</span>
-                                    </div>
-                                </div>
-                                <div class="timeline-stats">
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="top-repo-stars">--</div>
-                                        <div class="timeline-label">top repo stars</div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="total-size">--</div>
-                                        <div class="timeline-label">total MB</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Activity Pulse -->
-                            <div class="geo-card">
-                                <div class="geo-header">
-                                    <i class="fas fa-waveform"></i>
-                                    <h3>activity pulse</h3>
-                                </div>
-                                <div class="metrics-grid">
-                                    <div class="metric">
-                                        <div class="metric-value" id="weekly-commits">--</div>
-                                        <div class="metric-label">this week</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="monthly-commits">--</div>
-                                        <div class="metric-label">this month</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="streak-days">--</div>
-                                        <div class="metric-label">current streak</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="longest-streak">--</div>
-                                        <div class="metric-label">longest streak</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="total-prs">--</div>
-                                        <div class="metric-label">total PRs</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="avg-commits">--</div>
-                                        <div class="metric-label">avg weekly</div>
-                                    </div>
-                                </div>
-                                <div class="heatmap" id="heatmap-container"></div>
-                            </div>
-                            
-                            <!-- Language Distribution -->
-                            <div class="geo-card">
-                                <div class="geo-header">
-                                    <i class="fas fa-code-branch"></i>
-                                    <h3>language distribution</h3>
-                                </div>
-                                <div class="lang-list" id="lang-distribution">
-                                    <div class="lang-item">
-                                        <span class="lang-name">TypeScript</span>
-                                        <div class="lang-bar"><div class="lang-fill" id="ts-fill"></div></div>
-                                        <span class="lang-percent" id="ts-percent">--</span>
-                                    </div>
-                                    <div class="lang-item">
-                                        <span class="lang-name">Python</span>
-                                        <div class="lang-bar"><div class="lang-fill" id="py-fill"></div></div>
-                                        <span class="lang-percent" id="py-percent">--</span>
-                                    </div>
-                                    <div class="lang-item">
-                                        <span class="lang-name">JavaScript</span>
-                                        <div class="lang-bar"><div class="lang-fill" id="js-fill"></div></div>
-                                        <span class="lang-percent" id="js-percent">--</span>
-                                    </div>
-                                    <div class="lang-item">
-                                        <span class="lang-name">Go</span>
-                                        <div class="lang-bar"><div class="lang-fill" id="go-fill"></div></div>
-                                        <span class="lang-percent" id="go-percent">--</span>
-                                    </div>
-                                    <div class="lang-item">
-                                        <span class="lang-name">Rust</span>
-                                        <div class="lang-bar"><div class="lang-fill" id="rust-fill"></div></div>
-                                        <span class="lang-percent" id="rust-percent">--</span>
-                                    </div>
-                                </div>
-                                <div class="timeline-stats">
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="top-lang">--</div>
-                                        <div class="timeline-label">primary</div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="lang-diversity">--</div>
-                                        <div class="timeline-label">languages</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Project Impact -->
-                            <div class="geo-card">
-                                <div class="geo-header">
-                                    <i class="fas fa-chart-line"></i>
-                                    <h3>project impact</h3>
-                                </div>
-                                <div class="metrics-grid">
-                                    <div class="metric">
-                                        <div class="metric-value" id="avg-stars">--</div>
-                                        <div class="metric-label">avg stars/repo</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="most-forked">--</div>
-                                        <div class="metric-label">max forks</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="repos-with-stars">--</div>
-                                        <div class="metric-label">starred repos</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="active-repos">--</div>
-                                        <div class="metric-label">active repos</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-stats">
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="oldest-repo">--</div>
-                                        <div class="timeline-label">oldest repo</div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="newest-repo">--</div>
-                                        <div class="timeline-label">newest repo</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Community Engagement -->
-                            <div class="geo-card">
-                                <div class="geo-header">
-                                    <i class="fas fa-users"></i>
-                                    <h3>community engagement</h3>
-                                </div>
-                                <div class="metrics-grid">
-                                    <div class="metric">
-                                        <div class="metric-value" id="org-count">--</div>
-                                        <div class="metric-label">organizations</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="issue-comments">--</div>
-                                        <div class="metric-label">issue comments</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="review-comments">--</div>
-                                        <div class="metric-label">review comments</div>
-                                    </div>
-                                    <div class="metric">
-                                        <div class="metric-value" id="collaborators">--</div>
-                                        <div class="metric-label">collaborators</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-stats">
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="pr-merged">--</div>
-                                        <div class="timeline-label">PRs merged</div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-value" id="pr-open">--</div>
-                                        <div class="timeline-label">PRs open</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Primary Stats -->
+            <div class="stats-primary" id="primary-stats"></div>
+            
+            <!-- Personal Information Section -->
+            <div class="personal-section">
+                <div class="section-title">// personal profile</div>
+                <div class="personal-grid" id="personal-grid"></div>
             </div>
+            
+            <!-- Geometric Statistics Section -->
+            <div class="geometric-section">
+                <div class="section-title">// analytics dashboard</div>
+                <div class="geometric-grid" id="geometric-grid"></div>
+            </div>
+            
+            <!-- Extra Stats Section -->
+            <div class="extra-stats" id="extra-stats"></div>
             
             <!-- Enter Button -->
             <div class="enter-wrapper">
@@ -1033,14 +863,15 @@
     <script>
         // Generate floating code particles
         function createParticles() {
-            const codes = ['</>', '{}', '()', '=>', 'const', 'let', 'fn', 'return', 'impl', 'struct', 'if', 'else', 'match', 'async', 'await', 'class'];
-            for (let i = 0; i < 40; i++) {
+            const codes = ['</>', '{}', '()', '=>', 'const', 'let', 'fn', 'return', 'impl', 'trait', 'struct', 'if', 'else', 'match', 'async', 'await', 'loop', 'map', 'filter', 'reduce'];
+            for (let i = 0; i < 45; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'code-particle';
                 particle.textContent = codes[Math.floor(Math.random() * codes.length)];
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDuration = 10 + Math.random() * 30 + 's';
                 particle.style.animationDelay = Math.random() * 25 + 's';
+                particle.style.fontSize = (8 + Math.random() * 6) + 'px';
                 document.body.appendChild(particle);
             }
         }
@@ -1050,14 +881,29 @@
         function generateHeatmap(activityLevels) {
             const heatmap = document.getElementById('heatmap-container');
             if (!heatmap) return;
+            
             heatmap.innerHTML = '';
             for (let i = 0; i < 35; i++) {
                 const cell = document.createElement('div');
                 cell.className = 'heatmap-cell';
                 const level = activityLevels ? activityLevels[i % activityLevels.length] : Math.floor(Math.random() * 5);
-                if (level > 0) cell.classList.add(`level-${level}`);
+                if (level > 0) {
+                    cell.classList.add(`level-${level}`);
+                }
                 heatmap.appendChild(cell);
             }
+        }
+        
+        // Calculate account age
+        function getAccountAge(createdAt) {
+            const created = new Date(createdAt);
+            const now = new Date();
+            const years = now.getFullYear() - created.getFullYear();
+            const months = now.getMonth() - created.getMonth();
+            if (months < 0) {
+                return `${years - 1}y ${12 + months}m`;
+            }
+            return `${years}y ${months}m`;
         }
         
         // Calculate age from birth year
@@ -1066,54 +912,230 @@
             return currentYear - birthYear;
         }
         
-        // Format account age
-        function getAccountAge(createdAt) {
-            const created = new Date(createdAt);
-            const now = new Date();
-            const years = now.getFullYear() - created.getFullYear();
-            const months = now.getMonth() - created.getMonth();
-            if (months < 0) return `${years - 1}y ${12 + months}m`;
-            return `${years}y ${months}m`;
-        }
-        
-        // Format date
-        function formatDate(dateStr) {
-            const date = new Date(dateStr);
-            return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-        }
-        
-        // Format size
+        // Format bytes to MB
         function formatSize(bytes) {
             return (bytes / (1024 * 1024)).toFixed(1);
         }
         
+        // Format number with K/M suffix
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num.toString();
+        }
+        
+        // Personal information (customizable)
+        const personalInfo = {
+            fullName: 'Sayed Hamdye',
+            birthYear: 2000,
+            country: 'Egypt',
+            city: 'Cairo',
+            languages: 'Arabic, English',
+            experience: 5,
+            education: 'Computer Science, B.Sc.',
+            bio: 'Passionate software engineer with expertise in building scalable web applications, distributed systems, and clean code architecture. Advocate for open source and continuous learning.',
+            email: 'sayeddaana221166@gmail.com',
+            whatsapp: '20114 562 4848',
+            telegram: '@uncle_shawaza',
+            website: 'uncle-shawaza.dev',
+            stackoverflow: 'uncle-shawaza'
+        };
+        
+        // Build primary stats dynamically
+        function buildPrimaryStats(statsData) {
+            const container = document.getElementById('primary-stats');
+            const stats = [
+                { icon: 'fa-code', value: statsData.repos, label: 'repositories' },
+                { icon: 'fa-star', value: statsData.stars, label: 'stars earned' },
+                { icon: 'fa-code-branch', value: statsData.forks, label: 'forks' },
+                { icon: 'fa-users', value: statsData.followers, label: 'followers' },
+                { icon: 'fa-user-plus', value: statsData.following, label: 'following' },
+                { icon: 'fa-chart-line', value: statsData.commits, label: 'contributions' },
+                { icon: 'fa-calendar-alt', value: statsData.accountAge, label: 'account age' },
+                { icon: 'fa-trophy', value: statsData.gists, label: 'gists' },
+                { icon: 'fa-project-diagram', value: statsData.orgs, label: 'organizations' },
+                { icon: 'fa-code-pull-request', value: statsData.prs, label: 'pull requests' },
+                { icon: 'fa-bug', value: statsData.issues, label: 'issues opened' },
+                { icon: 'fa-hard-drive', value: statsData.repoSize, label: 'total size (MB)' }
+            ];
+            
+            container.innerHTML = stats.map((stat, idx) => `
+                <div class="stat-item" style="--order: ${idx}">
+                    <div class="stat-icon"><i class="fas ${stat.icon}"></i></div>
+                    <div class="stat-number">${stat.value}</div>
+                    <div class="stat-label">${stat.label}</div>
+                </div>
+            `).join('');
+        }
+        
+        // Build personal info grid
+        function buildPersonalInfo() {
+            const container = document.getElementById('personal-grid');
+            container.innerHTML = `
+                <div class="personal-card">
+                    <div class="personal-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>basic information</h3>
+                    </div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-tag"></i> full name</span><span class="info-value">${personalInfo.fullName}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-calendar"></i> age</span><span class="info-value">${calculateAge(personalInfo.birthYear)} years</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-map-marker-alt"></i> country</span><span class="info-value">${personalInfo.country}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-city"></i> city</span><span class="info-value">${personalInfo.city}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-globe"></i> languages</span><span class="info-value">${personalInfo.languages}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-briefcase"></i> experience</span><span class="info-value">${personalInfo.experience} years</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-graduation-cap"></i> education</span><span class="info-value">${personalInfo.education}</span></div>
+                </div>
+                <div class="personal-card">
+                    <div class="personal-header">
+                        <i class="fas fa-address-card"></i>
+                        <h3>about me</h3>
+                    </div>
+                    <div class="bio-text">${personalInfo.bio}</div>
+                    <div class="info-row" style="margin-top: 0.75rem;"><span class="info-label"><i class="fas fa-envelope"></i> email</span><span class="info-value">${personalInfo.email}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-calendar-week"></i> joined GitHub</span><span class="info-value" id="joined-date">--</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-clock"></i> timezone</span><span class="info-value">UTC+2 / UTC+3</span></div>
+                </div>
+                <div class="personal-card">
+                    <div class="personal-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>core expertise</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TypeScript</span><span class="skill-tag">React</span><span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span><span class="skill-tag">Go</span><span class="skill-tag">Rust</span>
+                        <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">AWS</span>
+                        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">GraphQL</span>
+                        <span class="skill-tag">Redis</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Terraform</span>
+                    </div>
+                    <div class="info-row" style="margin-top: 0.75rem;"><span class="info-label"><i class="fas fa-chart-line"></i> total commits</span><span class="info-value" id="total-commits-info">--</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-rocket"></i> projects</span><span class="info-value" id="total-projects">--</span></div>
+                </div>
+                <div class="personal-card">
+                    <div class="personal-header">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>connect & social</h3>
+                    </div>
+                    <div class="info-row"><span class="info-label"><i class="fab fa-github"></i> github</span><span class="info-value"><a href="https://github.com/uncle-shawaza" style="color: #6d9eff; text-decoration: none;">@uncle-shawaza</a></span></div>
+                    <div class="info-row"><span class="info-label"><i class="fab fa-whatsapp"></i> whatsapp</span><span class="info-value">${personalInfo.whatsapp}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fab fa-telegram"></i> telegram</span><span class="info-value">${personalInfo.telegram}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fas fa-blog"></i> website</span><span class="info-value">${personalInfo.website}</span></div>
+                    <div class="info-row"><span class="info-label"><i class="fab fa-stack-overflow"></i> stack overflow</span><span class="info-value">${personalInfo.stackoverflow}</span></div>
+                </div>
+            `;
+        }
+        
+        // Build geometric grid
+        function buildGeometricGrid(data, langPercentages, topLanguage, uniqueLanguages, activityLevels) {
+            const container = document.getElementById('geometric-grid');
+            container.innerHTML = `
+                <div class="geo-card">
+                    <div class="geo-header"><i class="fas fa-chart-pie"></i><h3>code activity index</h3></div>
+                    <div class="circular-wrapper">
+                        <div class="circular-item">
+                            <svg viewBox="0 0 40 40" class="circular-chart"><circle cx="20" cy="20" r="16" class="circle-bg"></circle><circle cx="20" cy="20" r="16" class="circle-progress" id="circle-commits" transform="rotate(-90 20 20)"></circle></svg>
+                            <div class="circular-value" id="commit-percent">--</div><div class="circular-label">commit activity</div>
+                        </div>
+                        <div class="circular-item">
+                            <svg viewBox="0 0 40 40" class="circular-chart"><circle cx="20" cy="20" r="16" class="circle-bg"></circle><circle cx="20" cy="20" r="16" class="circle-progress" id="circle-prs" transform="rotate(-90 20 20)"></circle></svg>
+                            <div class="circular-value" id="pr-percent">--</div><div class="circular-label">pull requests</div>
+                        </div>
+                        <div class="circular-item">
+                            <svg viewBox="0 0 40 40" class="circular-chart"><circle cx="20" cy="20" r="16" class="circle-bg"></circle><circle cx="20" cy="20" r="16" class="circle-progress" id="circle-issues" transform="rotate(-90 20 20)"></circle></svg>
+                            <div class="circular-value" id="issue-percent-circ">--</div><div class="circular-label">issue resolution</div>
+                        </div>
+                    </div>
+                    <div class="timeline-stats">
+                        <div class="timeline-item"><div class="timeline-value" id="first-contrib">--</div><div class="timeline-label">first contribution</div></div>
+                        <div class="timeline-item"><div class="timeline-value" id="last-active">--</div><div class="timeline-label">last active</div></div>
+                    </div>
+                </div>
+                <div class="geo-card">
+                    <div class="geo-header"><i class="fas fa-chart-simple"></i><h3>repository analytics</h3></div>
+                    <div class="bar-chart">
+                        <div class="bar-item"><span class="bar-label">forks</span><div class="bar-container"><div class="bar-fill" id="fork-bar"></div></div><span class="bar-percent" id="fork-percent">--</span></div>
+                        <div class="bar-item"><span class="bar-label">watchers</span><div class="bar-container"><div class="bar-fill" id="watch-bar"></div></div><span class="bar-percent" id="watch-percent">--</span></div>
+                        <div class="bar-item"><span class="bar-label">open issues</span><div class="bar-container"><div class="bar-fill" id="issue-bar"></div></div><span class="bar-percent" id="issue-percent">--</span></div>
+                    </div>
+                    <div class="repo-stats">
+                        <div class="repo-stat-badge"><div class="repo-stat-number" id="top-repo-stars">--</div><div class="repo-stat-label">top repo stars</div></div>
+                        <div class="repo-stat-badge"><div class="repo-stat-number" id="total-size">--</div><div class="repo-stat-label">total size (MB)</div></div>
+                        <div class="repo-stat-badge"><div class="repo-stat-number" id="avg-repo-size">--</div><div class="repo-stat-label">avg repo size</div></div>
+                    </div>
+                </div>
+                <div class="geo-card">
+                    <div class="geo-header"><i class="fas fa-waveform"></i><h3>activity pulse</h3></div>
+                    <div class="metrics-grid">
+                        <div class="metric"><div class="metric-value" id="weekly-commits">--</div><div class="metric-label">this week</div></div>
+                        <div class="metric"><div class="metric-value" id="monthly-commits">--</div><div class="metric-label">this month</div></div>
+                        <div class="metric"><div class="metric-value" id="avg-commits">--</div><div class="metric-label">avg per week</div></div>
+                        <div class="metric"><div class="metric-value" id="streak-days">--</div><div class="metric-label">current streak</div></div>
+                        <div class="metric"><div class="metric-value" id="longest-streak">--</div><div class="metric-label">longest streak</div></div>
+                        <div class="metric"><div class="metric-value" id="total-prs-metric">--</div><div class="metric-label">pull requests</div></div>
+                    </div>
+                    <div class="heatmap" id="heatmap-container"></div>
+                </div>
+                <div class="geo-card">
+                    <div class="geo-header"><i class="fas fa-code-branch"></i><h3>technology stack</h3></div>
+                    <div class="lang-list">
+                        <div class="lang-item"><span class="lang-name">TypeScript</span><div class="lang-bar"><div class="lang-fill" id="ts-fill"></div></div><span class="lang-percent" id="ts-percent">--</span></div>
+                        <div class="lang-item"><span class="lang-name">Python</span><div class="lang-bar"><div class="lang-fill" id="py-fill"></div></div><span class="lang-percent" id="py-percent">--</span></div>
+                        <div class="lang-item"><span class="lang-name">JavaScript</span><div class="lang-bar"><div class="lang-fill" id="js-fill"></div></div><span class="lang-percent" id="js-percent">--</span></div>
+                        <div class="lang-item"><span class="lang-name">Go</span><div class="lang-bar"><div class="lang-fill" id="go-fill"></div></div><span class="lang-percent" id="go-percent">--</span></div>
+                        <div class="lang-item"><span class="lang-name">Rust</span><div class="lang-bar"><div class="lang-fill" id="rust-fill"></div></div><span class="lang-percent" id="rust-percent">--</span></div>
+                        <div class="lang-item"><span class="lang-name">Java</span><div class="lang-bar"><div class="lang-fill" id="java-fill"></div></div><span class="lang-percent" id="java-percent">--</span></div>
+                    </div>
+                    <div class="timeline-stats">
+                        <div class="timeline-item"><div class="timeline-value" id="top-lang">--</div><div class="timeline-label">primary language</div></div>
+                        <div class="timeline-item"><div class="timeline-value" id="lang-diversity">--</div><div class="timeline-label">languages used</div></div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Build extra stats section
+        function buildExtraStats(data) {
+            const container = document.getElementById('extra-stats');
+            container.innerHTML = `
+                <div class="extra-card"><div class="extra-value">${data.avgStarsPerRepo || '--'}</div><div class="extra-label">avg stars per repo</div></div>
+                <div class="extra-card"><div class="extra-value">${data.reposWithReadme || '--'}</div><div class="extra-label">repos with README</div></div>
+                <div class="extra-card"><div class="extra-value">${data.activeMonths || '--'}</div><div class="extra-label">active months</div></div>
+            `;
+        }
+        
+        // Update circle progress
+        function updateCircle(elementId, percent) {
+            const circle = document.getElementById(elementId);
+            if (circle) {
+                const radius = 16;
+                const circumference = 2 * Math.PI * radius;
+                const offset = circumference - (percent / 100) * circumference;
+                circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                circle.style.strokeDashoffset = offset;
+            }
+        }
+        
+        // Update bar
+        function updateBar(barId, percentId, value, max) {
+            const percent = Math.min(100, Math.round((value / max) * 100));
+            const bar = document.getElementById(barId);
+            const percentSpan = document.getElementById(percentId);
+            if (bar) bar.style.width = percent + '%';
+            if (percentSpan) percentSpan.textContent = percent + '%';
+        }
+        
+        // Update lang bar
+        function updateLangBar(barId, percentId, percent) {
+            const bar = document.getElementById(barId);
+            const percentSpan = document.getElementById(percentId);
+            if (bar) bar.style.width = percent + '%';
+            if (percentSpan) percentSpan.textContent = percent + '%';
+        }
+        
         // Fetch all GitHub data
         async function fetchGitHubData() {
-            const username = 'Uncle_Shawaza';
-            
-            // Personal info (can be customized)
-            const personalInfo = {
-                fullName: 'Sayed Hamdye',
-                birthYear: 2000,
-                location: 'Cairo, Egypt',
-                languages: 'Arabic , English',
-                education: 'Al-Azhar Al-Sharif',
-                email: 'sayeddaana221166@gmail.com',
-                experience: 5,
-                bio: 'Full-stack developer with 5+ years of experience building scalable web applications. Passionate about clean code, open source, and modern software architecture.'
-            };
-            
-            // Update personal info
-            document.getElementById('full-name').textContent = personalInfo.fullName;
-            document.getElementById('age').textContent = calculateAge(personalInfo.birthYear) + ' years';
-            document.getElementById('location').textContent = personalInfo.location;
-            document.getElementById('languages').textContent = personalInfo.languages;
-            document.getElementById('experience').textContent = personalInfo.experience + '+ years';
-            document.getElementById('education').textContent = personalInfo.education;
-            document.getElementById('bio-text').textContent = personalInfo.bio;
+            const username = 'uncle-shawaza';
             
             try {
-                // Fetch data
                 const [userRes, reposRes, eventsRes, orgsRes] = await Promise.all([
                     fetch(`https://api.github.com/users/${username}`),
                     fetch(`https://api.github.com/users/${username}/repos?per_page=100`),
@@ -1132,18 +1154,25 @@
                 const totalWatchers = reposData.reduce((acc, repo) => acc + repo.watchers_count, 0);
                 const totalIssues = reposData.reduce((acc, repo) => acc + repo.open_issues_count, 0);
                 const totalSize = reposData.reduce((acc, repo) => acc + (repo.size || 0), 0);
-                const avgStars = reposData.length > 0 ? (totalStars / reposData.length).toFixed(1) : 0;
-                const maxForks = reposData.length > 0 ? Math.max(...reposData.map(r => r.forks_count)) : 0;
-                const reposWithStars = reposData.filter(r => r.stargazers_count > 0).length;
-                const activeRepos = reposData.filter(r => new Date(r.updated_at) > new Date(Date.now() - 90 * 24 * 60 * 60 * 1000)).length;
+                const avgSize = reposData.length > 0 ? (totalSize / reposData.length).toFixed(1) : 0;
+                const topRepoStars = reposData.length > 0 ? Math.max(...reposData.map(r => r.stargazers_count)) : 0;
+                const avgStarsPerRepo = reposData.length > 0 ? (totalStars / reposData.length).toFixed(1) : 0;
+                const reposWithReadme = reposData.filter(r => r.has_wiki || r.description).length;
                 
-                const oldestRepo = reposData.length > 0 ? reposData.reduce((a, b) => new Date(a.created_at) < new Date(b.created_at) ? a : b) : null;
-                const newestRepo = reposData.length > 0 ? reposData.reduce((a, b) => new Date(a.created_at) > new Date(b.created_at) ? a : b) : null;
+                // Push events
+                const pushEvents = eventsData.filter(e => e.type === 'PushEvent');
+                const totalCommits = pushEvents.reduce((acc, e) => acc + (e.payload.size || 0), 0);
+                const prEvents = eventsData.filter(e => e.type === 'PullRequestEvent');
+                const totalPRs = prEvents.length;
+                const issueEvents = eventsData.filter(e => e.type === 'IssuesEvent');
+                const totalIssuesOpened = issueEvents.filter(e => e.payload.action === 'opened').length;
                 
                 // Language distribution
                 const langCount = {};
                 reposData.forEach(repo => {
-                    if (repo.language) langCount[repo.language] = (langCount[repo.language] || 0) + 1;
+                    if (repo.language) {
+                        langCount[repo.language] = (langCount[repo.language] || 0) + 1;
+                    }
                 });
                 const totalReposWithLang = Object.values(langCount).reduce((a, b) => a + b, 0);
                 const uniqueLanguages = Object.keys(langCount).length;
@@ -1154,58 +1183,82 @@
                     return totalReposWithLang > 0 ? Math.round((count / totalReposWithLang) * 100) : 0;
                 };
                 
-                // Events analysis
-                const pushEvents = eventsData.filter(e => e.type === 'PushEvent');
-                const totalCommits = pushEvents.reduce((acc, e) => acc + (e.payload.size || 0), 0);
-                const prEvents = eventsData.filter(e => e.type === 'PullRequestEvent');
-                const totalPRs = prEvents.length;
-                const prMerged = prEvents.filter(e => e.payload.pull_request?.merged === true).length;
-                const prOpen = prEvents.filter(e => e.payload.action === 'opened').length;
-                const issueComments = eventsData.filter(e => e.type === 'IssueCommentEvent').length;
-                const reviewComments = eventsData.filter(e => e.type === 'PullRequestReviewCommentEvent').length;
+                // Activity metrics
+                const now = new Date();
+                const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
                 
-                // Date analysis
+                const weeklyCommits = pushEvents.filter(e => new Date(e.created_at) > oneWeekAgo).reduce((acc, e) => acc + (e.payload.size || 0), 0);
+                const monthlyCommits = pushEvents.filter(e => new Date(e.created_at) > oneMonthAgo).reduce((acc, e) => acc + (e.payload.size || 0), 0);
+                const avgWeekly = Math.floor(totalCommits / 12);
+                
+                // Streak calculation
                 const dates = pushEvents.map(e => new Date(e.created_at).toDateString());
                 const uniqueDates = [...new Set(dates)];
-                let currentStreak = 0, longestStreak = 0, tempStreak = 0, lastDate = null;
+                let currentStreak = 0;
+                let longestStreak = 0;
+                let tempStreak = 0;
+                let lastDate = null;
+                
                 uniqueDates.sort().reverse().forEach(date => {
-                    if (!lastDate) tempStreak = 1;
-                    else {
+                    if (!lastDate) {
+                        tempStreak = 1;
+                    } else {
                         const diff = (new Date(lastDate) - new Date(date)) / (1000 * 60 * 60 * 24);
-                        if (diff <= 1) tempStreak++;
-                        else { longestStreak = Math.max(longestStreak, tempStreak); tempStreak = 1; }
+                        if (diff <= 1) {
+                            tempStreak++;
+                        } else {
+                            longestStreak = Math.max(longestStreak, tempStreak);
+                            tempStreak = 1;
+                        }
                     }
                     lastDate = date;
                 });
                 longestStreak = Math.max(longestStreak, tempStreak);
                 currentStreak = tempStreak;
                 
-                // Weekly/monthly
-                const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-                const oneMonthAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-                const weeklyCommits = pushEvents.filter(e => new Date(e.created_at) > oneWeekAgo).reduce((acc, e) => acc + (e.payload.size || 0), 0);
-                const monthlyCommits = pushEvents.filter(e => new Date(e.created_at) > oneMonthAgo).reduce((acc, e) => acc + (e.payload.size || 0), 0);
-                const avgWeekly = Math.floor(totalCommits / 12);
+                // Active months
+                const monthsSet = new Set(pushEvents.map(e => new Date(e.created_at).toISOString().slice(0, 7)));
+                const activeMonths = monthsSet.size;
                 
                 // Activity levels for heatmap
                 const activityLevels = uniqueDates.slice(0, 35).map(() => Math.floor(Math.random() * 5));
                 
-                // Update Primary Stats
-                document.getElementById('repo-count').textContent = userData.public_repos || 0;
-                document.getElementById('star-count').textContent = totalStars;
-                document.getElementById('fork-count').textContent = totalForks;
-                document.getElementById('follower-count').textContent = userData.followers || 0;
-                document.getElementById('following-count').textContent = userData.following || 0;
-                document.getElementById('commit-count').textContent = totalCommits > 0 ? totalCommits : '1.2k';
-                document.getElementById('account-age').textContent = getAccountAge(userData.created_at);
-                document.getElementById('gist-count').textContent = userData.public_gists || 0;
-                document.getElementById('join-date').textContent = formatDate(userData.created_at);
-                document.getElementById('email').textContent = personalInfo.email;
+                // Build stats data
+                const statsData = {
+                    repos: userData.public_repos || 0,
+                    stars: totalStars,
+                    forks: totalForks,
+                    followers: userData.followers || 0,
+                    following: userData.following || 0,
+                    commits: totalCommits > 0 ? totalCommits : '1.2k',
+                    accountAge: getAccountAge(userData.created_at),
+                    gists: userData.public_gists || 0,
+                    orgs: orgsData.length || 0,
+                    prs: totalPRs,
+                    issues: totalIssuesOpened,
+                    repoSize: formatSize(totalSize)
+                };
+                
+                // Build page
+                buildPrimaryStats(statsData);
+                buildPersonalInfo();
+                buildGeometricGrid();
+                buildExtraStats({
+                    avgStarsPerRepo: avgStarsPerRepo,
+                    reposWithReadme: reposWithReadme,
+                    activeMonths: activeMonths
+                });
+                
+                // Update DOM elements
+                document.getElementById('joined-date').textContent = new Date(userData.created_at).toLocaleDateString();
+                document.getElementById('total-commits-info').textContent = totalCommits > 0 ? totalCommits : '1.2k';
+                document.getElementById('total-projects').textContent = userData.public_repos || 0;
                 
                 // Circular charts
                 const commitPercent = Math.min(92, Math.floor(totalCommits / 15));
                 const prPercent = Math.min(78, Math.floor(totalPRs / 2.5));
-                const issuePercent = Math.min(65, Math.floor((eventsData.filter(e => e.type === 'IssuesEvent').length) / 2));
+                const issuePercent = Math.min(65, Math.floor((totalIssuesOpened / 3)));
                 
                 updateCircle('circle-commits', commitPercent);
                 updateCircle('circle-prs', prPercent);
@@ -1214,11 +1267,11 @@
                 document.getElementById('pr-percent').textContent = prPercent + '%';
                 document.getElementById('issue-percent-circ').textContent = issuePercent + '%';
                 
-                // Timeline
-                const firstEvent = eventsData.length > 0 ? formatDate(eventsData[eventsData.length - 1].created_at) : 'N/A';
-                const lastEvent = eventsData.length > 0 ? formatDate(eventsData[0].created_at) : 'N/A';
-                document.getElementById('first-contrib').textContent = firstEvent !== 'N/A' ? firstEvent.slice(2) : '--';
-                document.getElementById('last-active').textContent = lastEvent !== 'N/A' ? lastEvent.slice(2) : '--';
+                // Timeline stats
+                const firstEvent = eventsData.length > 0 ? new Date(eventsData[eventsData.length - 1].created_at).toLocaleDateString() : 'N/A';
+                const lastEvent = eventsData.length > 0 ? new Date(eventsData[0].created_at).toLocaleDateString() : 'N/A';
+                document.getElementById('first-contrib').textContent = firstEvent !== 'N/A' ? firstEvent.slice(0, 5) : '--';
+                document.getElementById('last-active').textContent = lastEvent !== 'N/A' ? lastEvent.slice(0, 5) : '--';
                 
                 // Bar metrics
                 const maxMetric = Math.max(totalForks, totalWatchers, totalIssues, 1);
@@ -1226,31 +1279,18 @@
                 updateBar('watch-bar', 'watch-percent', totalWatchers, maxMetric);
                 updateBar('issue-bar', 'issue-percent', totalIssues, maxMetric);
                 
-                // Extra stats
-                document.getElementById('top-repo-stars').textContent = Math.max(...reposData.map(r => r.stargazers_count), 0);
+                // Extra repo stats
+                document.getElementById('top-repo-stars').textContent = topRepoStars;
                 document.getElementById('total-size').textContent = formatSize(totalSize);
+                document.getElementById('avg-repo-size').textContent = avgSize;
+                
+                // Activity metrics
                 document.getElementById('weekly-commits').textContent = weeklyCommits;
                 document.getElementById('monthly-commits').textContent = monthlyCommits;
+                document.getElementById('avg-commits').textContent = avgWeekly > 0 ? avgWeekly : 4;
                 document.getElementById('streak-days').textContent = currentStreak;
                 document.getElementById('longest-streak').textContent = longestStreak;
-                document.getElementById('total-prs').textContent = totalPRs;
-                document.getElementById('avg-commits').textContent = avgWeekly > 0 ? avgWeekly : 4;
-                
-                // Project impact
-                document.getElementById('avg-stars').textContent = avgStars;
-                document.getElementById('most-forked').textContent = maxForks;
-                document.getElementById('repos-with-stars').textContent = reposWithStars;
-                document.getElementById('active-repos').textContent = activeRepos;
-                document.getElementById('oldest-repo').textContent = oldestRepo ? formatDate(oldestRepo.created_at).slice(2) : '--';
-                document.getElementById('newest-repo').textContent = newestRepo ? formatDate(newestRepo.created_at).slice(2) : '--';
-                
-                // Community engagement
-                document.getElementById('org-count').textContent = orgsData.length || 0;
-                document.getElementById('issue-comments').textContent = issueComments;
-                document.getElementById('review-comments').textContent = reviewComments;
-                document.getElementById('collaborators').textContent = reposData.reduce((acc, repo) => acc + (repo.collaborators_url ? 1 : 0), 0);
-                document.getElementById('pr-merged').textContent = prMerged;
-                document.getElementById('pr-open').textContent = prOpen;
+                document.getElementById('total-prs-metric').textContent = totalPRs;
                 
                 // Language distribution
                 updateLangBar('ts-fill', 'ts-percent', getLangPercent('TypeScript'));
@@ -1258,6 +1298,8 @@
                 updateLangBar('js-fill', 'js-percent', getLangPercent('JavaScript'));
                 updateLangBar('go-fill', 'go-percent', getLangPercent('Go'));
                 updateLangBar('rust-fill', 'rust-percent', getLangPercent('Rust'));
+                updateLangBar('java-fill', 'java-percent', getLangPercent('Java'));
+                
                 document.getElementById('top-lang').textContent = topLanguage;
                 document.getElementById('lang-diversity').textContent = uniqueLanguages;
                 
@@ -1265,99 +1307,73 @@
                 generateHeatmap(activityLevels);
                 
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Error fetching data:', error);
                 // Fallback data
-                const fallback = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-                fallback('repo-count', '24');
-                fallback('star-count', '147');
-                fallback('fork-count', '32');
-                fallback('follower-count', '89');
-                fallback('following-count', '42');
-                fallback('commit-count', '1.2k');
-                fallback('account-age', '3y 4m');
-                fallback('gist-count', '5');
-                fallback('join-date', '2022-03');
+                const fallbackStats = {
+                    repos: 24, stars: 147, forks: 32, followers: 89, following: 42,
+                    commits: '1.2k', accountAge: '3y 4m', gists: 5, orgs: 2, prs: 23, issues: 12, repoSize: '156.3'
+                };
+                buildPrimaryStats(fallbackStats);
+                buildPersonalInfo();
+                buildGeometricGrid();
+                buildExtraStats({ avgStarsPerRepo: '6.1', reposWithReadme: 18, activeMonths: 24 });
+                
+                document.getElementById('joined-date').textContent = 'Jan 2022';
+                document.getElementById('total-commits-info').textContent = '1.2k';
+                document.getElementById('total-projects').textContent = '24';
                 
                 updateCircle('circle-commits', 68);
                 updateCircle('circle-prs', 42);
                 updateCircle('circle-issues', 35);
-                fallback('commit-percent', '68%');
-                fallback('pr-percent', '42%');
-                fallback('issue-percent-circ', '35%');
-                fallback('first-contrib', '2022');
-                fallback('last-active', 'Mar 23');
+                document.getElementById('commit-percent').textContent = '68%';
+                document.getElementById('pr-percent').textContent = '42%';
+                document.getElementById('issue-percent-circ').textContent = '35%';
+                
+                document.getElementById('first-contrib').textContent = '2022';
+                document.getElementById('last-active').textContent = 'Mar 23';
                 
                 updateBar('fork-bar', 'fork-percent', 32, 45);
                 updateBar('watch-bar', 'watch-percent', 28, 45);
                 updateBar('issue-bar', 'issue-percent', 12, 45);
-                fallback('top-repo-stars', '42');
-                fallback('total-size', '156.3');
-                fallback('weekly-commits', '12');
-                fallback('monthly-commits', '48');
-                fallback('streak-days', '7');
-                fallback('longest-streak', '14');
-                fallback('total-prs', '23');
-                fallback('avg-commits', '4');
-                fallback('avg-stars', '6.1');
-                fallback('most-forked', '8');
-                fallback('repos-with-stars', '18');
-                fallback('active-repos', '12');
-                fallback('oldest-repo', '2022');
-                fallback('newest-repo', '2026');
-                fallback('org-count', '2');
-                fallback('issue-comments', '47');
-                fallback('review-comments', '31');
-                fallback('collaborators', '5');
-                fallback('pr-merged', '18');
-                fallback('pr-open', '5');
+                
+                document.getElementById('top-repo-stars').textContent = '42';
+                document.getElementById('total-size').textContent = '156.3';
+                document.getElementById('avg-repo-size').textContent = '6.5';
+                
+                document.getElementById('weekly-commits').textContent = '12';
+                document.getElementById('monthly-commits').textContent = '48';
+                document.getElementById('avg-commits').textContent = '4';
+                document.getElementById('streak-days').textContent = '7';
+                document.getElementById('longest-streak').textContent = '14';
+                document.getElementById('total-prs-metric').textContent = '23';
                 
                 updateLangBar('ts-fill', 'ts-percent', 45);
                 updateLangBar('py-fill', 'py-percent', 25);
                 updateLangBar('js-fill', 'js-percent', 18);
                 updateLangBar('go-fill', 'go-percent', 7);
-                updateLangBar('rust-fill', 'rust-percent', 5);
-                fallback('top-lang', 'TypeScript');
-                fallback('lang-diversity', '6');
+                updateLangBar('rust-fill', 'rust-percent', 3);
+                updateLangBar('java-fill', 'java-percent', 2);
+                
+                document.getElementById('top-lang').textContent = 'TypeScript';
+                document.getElementById('lang-diversity').textContent = '6';
                 
                 generateHeatmap([3,2,4,1,3,2,4,3,2,1,3,4,2,3,2,1,3,2,4,3,2,1,3,4,2,3,2,1,3,2,4,3,2,1,3]);
             }
         }
         
-        function updateCircle(elementId, percent) {
-            const circle = document.getElementById(elementId);
-            if (circle) {
-                const radius = 16;
-                const circumference = 2 * Math.PI * radius;
-                const offset = circumference - (percent / 100) * circumference;
-                circle.style.strokeDasharray = `${circumference} ${circumference}`;
-                circle.style.strokeDashoffset = offset;
-            }
-        }
-        
-        function updateBar(barId, percentId, value, max) {
-            const percent = Math.min(100, Math.round((value / max) * 100));
-            const bar = document.getElementById(barId);
-            const percentSpan = document.getElementById(percentId);
-            if (bar) bar.style.width = percent + '%';
-            if (percentSpan) percentSpan.textContent = percent + '%';
-        }
-        
-        function updateLangBar(barId, percentId, percent) {
-            const bar = document.getElementById(barId);
-            const percentSpan = document.getElementById(percentId);
-            if (bar) bar.style.width = percent + '%';
-            if (percentSpan) percentSpan.textContent = percent + '%';
-        }
-        
+        // Redirect with history replacement
         function redirectToPortfolio() {
             const loadingEl = document.getElementById('loading');
             const btn = document.getElementById('enter-btn');
+            
             loadingEl.style.display = 'block';
             btn.disabled = true;
             btn.style.opacity = '0.5';
+            
             window.location.replace('https://uncle-shawaza.github.io/uncle-shawaza/');
         }
         
+        // Initialize
         fetchGitHubData();
         document.getElementById('enter-btn').addEventListener('click', redirectToPortfolio);
     </script>
